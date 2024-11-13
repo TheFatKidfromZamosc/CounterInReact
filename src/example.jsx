@@ -4,15 +4,24 @@ import {render} from "@testing-library/react";
 
 export default function Counter() {
     const [count, setCount] = useState(0);
+    const [color, setColor] = useState("white");
     return (
-        <div>
-        <button onClick={() => setCount(count + 1)}>
-            Increment
-        </button>
-    <button onClick={() =>setCount(count<1 ? count : count -1 )}>
-        Decrement
-    </button>
+        <div className={color ==="white" ? 'white' : 'black'}>
+            <button onClick={() => setCount(count + 1)}>
+                Increment
+            </button>
+            <button onClick={() => setCount(count < 1 ? count : count - 1)}>
+                Decrement
+            </button>
             <h1>{count}</h1>
+            <button onClick={() => setColor("white")}>
+                White
+            </button>
+            <button onClick={() => setColor("black")}>
+                Black
+            </button>
         </div>
-);
+
+
+    );
 }
